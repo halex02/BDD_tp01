@@ -88,6 +88,8 @@ project[fnom](select[acoul='noir'](articles join catalogue join fournisseurs));
 
 3-12)
 
+project[aid,fid](select[aid=aid2 AND fid<>fid2](catalogue times rename[fid2,aid2,prix2](catalogue)));
+
 3-13)
 
 project[fid,fnom](fournisseurs) minus (project[fid,fnom](select[acoul='noir'](articles join catalogue join fournisseurs))union(project[fid,fnom](select[acoul='argente'](articles join catalogue join fournisseurs))));
